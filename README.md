@@ -2,6 +2,8 @@
 
 Фотореалистичная интерьерная сцена с PBR материалами и динамическим освещением.
 
+[https://nurygus.github.io/pbr_demo_3d/](https://nurygus.github.io/pbr_demo_3d/)
+
 <p align="center">
   <img src="images/day.jpg" width="800" alt="Day Mode">
 </p>
