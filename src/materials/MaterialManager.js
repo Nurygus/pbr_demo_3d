@@ -16,18 +16,18 @@ export class MaterialManager {
     async loadTextures(useRealTextures = false) {
         if (useRealTextures) {
             try {
-                const floorDiffuse = await loadTexture('/textures/laminate_floor_02/laminate_floor_02_diff_1k.jpg', {
+                const floorDiffuse = await loadTexture('textures/laminate_floor_02/laminate_floor_02_diff_1k.jpg', {
                     repeatX: 2,
                     repeatY: 2,
                     colorSpace: THREE.SRGBColorSpace
                 }, this.maxAnisotropy);
-                const floorNormal = await loadTexture('/textures/laminate_floor_02/laminate_floor_02_nor_gl_1k.jpg', {
+                const floorNormal = await loadTexture('textures/laminate_floor_02/laminate_floor_02_nor_gl_1k.jpg', {
                     repeatX: 2,
                     repeatY: 2,
                     mipMapBias: MATERIAL_CONSTANTS.MIPMAP_BIAS_SHARP,
                     colorSpace: THREE.NoColorSpace
                 }, this.maxAnisotropy);
-                const floorARM = await loadTexture('/textures/laminate_floor_02/laminate_floor_02_arm_1k.jpg', {
+                const floorARM = await loadTexture('textures/laminate_floor_02/laminate_floor_02_arm_1k.jpg', {
                     repeatX: 2,
                     repeatY: 2,
                     mipMapBias: MATERIAL_CONSTANTS.MIPMAP_BIAS_SHARP,
@@ -55,13 +55,13 @@ export class MaterialManager {
                 };
 
                 const wallTextureScale = 4;
-                const wallNormal = await loadTexture('/textures/concrete_wall_006/concrete_wall_006_nor_gl_512.jpg', {
+                const wallNormal = await loadTexture('textures/concrete_wall_006/concrete_wall_006_nor_gl_512.jpg', {
                     repeatX: wallTextureScale,
                     repeatY: wallTextureScale,
                     mipMapBias: MATERIAL_CONSTANTS.MIPMAP_BIAS_SHARP,
                     colorSpace: THREE.NoColorSpace
                 }, this.maxAnisotropy);
-                const wallARM = await loadTexture('/textures/concrete_wall_006/concrete_wall_006_arm_512.jpg', {
+                const wallARM = await loadTexture('textures/concrete_wall_006/concrete_wall_006_arm_512.jpg', {
                     repeatX: wallTextureScale,
                     repeatY: wallTextureScale,
                     mipMapBias: MATERIAL_CONSTANTS.MIPMAP_BIAS_SHARP,

@@ -1,5 +1,6 @@
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from 'three';
+import { getAssetPath } from '../utils/helpers.js';
 
 export class ModelLoader {
     constructor() {
@@ -8,7 +9,7 @@ export class ModelLoader {
     }
 
     async loadModel(url, options = {}) {
-        const gltf = await this.loader.loadAsync(url);
+        const gltf = await this.loader.loadAsync(getAssetPath(url));
         const model = gltf.scene;
         
         const box = new THREE.Box3().setFromObject(model);

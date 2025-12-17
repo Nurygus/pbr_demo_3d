@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+import { getAssetPath } from './helpers.js';
 
 export class HDRILoader {
     constructor() {
@@ -20,13 +21,14 @@ export class HDRILoader {
         ];
         
         let lastError = null;
+        const assetUrl = getAssetPath(url);
         
         for (const attempt of attempts) {
             try {
                 this.loader.setDataType(attempt.type);
-                const texture = await this.loader.loadAsync(url);
+                const texture = await this.loader.loadAsync(assetUrl);
                 
-                console.log(`HDRI loaded (${attempt.name}):`, url);
+                console.log(`HDRI loaded (${attempt.name}):`, assetUrl);
                 console.log(`Size: ${texture.image?.width || 'N/A'}x${texture.image?.height || 'N/A'}`);
                 console.log(`Format: ${texture.format}, Type: ${texture.type}`);
                 

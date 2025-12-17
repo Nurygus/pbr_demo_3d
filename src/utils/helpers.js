@@ -1,9 +1,20 @@
 import * as THREE from 'three';
 import { MATERIAL_CONSTANTS } from '../config/constants.js';
 
+export function getAssetPath(path) {
+    if (path.startsWith('http://') || path.startsWith('https://')) {
+        return path;
+    }
+    const baseUrl = import.meta.env.BASE_URL;
+    if (path.startsWith('/')) {
+        return baseUrl + path.slice(1);
+    }
+    return baseUrl + path;
+}
+
 export async function loadTexture(url, options = {}, maxAnisotropy = 16) {
     const loader = new THREE.TextureLoader();
-    const texture = await loader.loadAsync(url);
+    const texture = await loader.loadAsync(getAssetPath(url));
     
     texture.wrapS = options.wrapS || THREE.RepeatWrapping;
     texture.wrapT = options.wrapT || THREE.RepeatWrapping;

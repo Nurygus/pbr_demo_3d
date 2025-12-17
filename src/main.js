@@ -11,7 +11,7 @@ import { Effects } from './postprocessing/Effects.js';
 import { UIControls } from './ui/Controls.js';
 import { LightingControls } from './ui/LightingControls.js';
 import { HDRILoader } from './utils/hdriLoader.js';
-import { updateLoadingProgress, hideLoading } from './utils/helpers.js';
+import { updateLoadingProgress, hideLoading, getAssetPath } from './utils/helpers.js';
 import { logPerformanceStats } from './utils/debug.js';
 import { PerformanceMonitor } from './utils/PerformanceMonitor.js';
 import { LightPresets } from './lighting/LightPresets.js';
@@ -290,7 +290,7 @@ class App {
         this.dayHDRI = await hdriLoader.loadDayHDRI(HDRI_CONFIG.day.environmentPath, dayIntensity);
         try {
             const loader = new THREE.TextureLoader();
-            const texture = await loader.loadAsync(HDRI_CONFIG.day.backgroundPath);
+            const texture = await loader.loadAsync(getAssetPath(HDRI_CONFIG.day.backgroundPath));
             texture.mapping = THREE.EquirectangularReflectionMapping;
             texture.colorSpace = THREE.SRGBColorSpace;
             this.dayHDRI.userData.backgroundTexture = texture;
@@ -301,7 +301,7 @@ class App {
         this.nightHDRI = await hdriLoader.loadNightHDRI(HDRI_CONFIG.night.environmentPath, nightIntensity);
         try {
             const loader = new THREE.TextureLoader();
-            const texture = await loader.loadAsync(HDRI_CONFIG.night.backgroundPath);
+            const texture = await loader.loadAsync(getAssetPath(HDRI_CONFIG.night.backgroundPath));
             texture.mapping = THREE.EquirectangularReflectionMapping;
             texture.colorSpace = THREE.SRGBColorSpace;
             this.nightHDRI.userData.backgroundTexture = texture;

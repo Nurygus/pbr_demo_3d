@@ -17,7 +17,7 @@ export const ROOM_CONFIG = {
 
 export const MODEL_CONFIG = {
     window: {
-        path: '/models/window.glb',
+        path: 'models/window.glb',
         position: [0.014, 1.667, -1.5],
         rotation: [0, 0, 0],
         scale: 1.0,
@@ -25,20 +25,20 @@ export const MODEL_CONFIG = {
         positionOffset: { x: 0.015, y: 0.037 },
     },
     door: {
-        path: '/models/door.glb',
+        path: 'models/door.glb',
         position: [-1.5, 1.0655, -0.013],
         rotation: [0, Math.PI / 2, 0],
         scale: 1.0,
         positionMode: 'center',
     },
     chair: {
-        path: '/models/chair.glb',
+        path: 'models/chair.glb',
         position: [-0.5, 0, -0.5],
         rotation: [0, Math.PI / 4, 0],
         scale: 1.0,
     },
     lauters: {
-        path: '/models/lauters.glb',
+        path: 'models/lauters.glb',
         position: [0.8, 0, -0.5],
         rotation: [0, 0, 0],
         scale: 0.8,
@@ -48,12 +48,12 @@ export const MODEL_CONFIG = {
 
 export const HDRI_CONFIG = {
     day: {
-        environmentPath: '/textures/hdri/kloofendal_48d_partly_cloudy_puresky_256.hdr',
-        backgroundPath: '/textures/hdri/kloofendal_48d_partly_cloudy_puresky.jpg',
+        environmentPath: 'textures/hdri/kloofendal_48d_partly_cloudy_puresky_256.hdr',
+        backgroundPath: 'textures/hdri/kloofendal_48d_partly_cloudy_puresky.jpg',
     },
     night: {
-        environmentPath: '/textures/hdri/moonless_golf_256.hdr',
-        backgroundPath: '/textures/hdri/moonless_golf.jpg',
+        environmentPath: 'textures/hdri/moonless_golf_256.hdr',
+        backgroundPath: 'textures/hdri/moonless_golf.jpg',
     },
 };
 
